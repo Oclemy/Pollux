@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/MainLayout"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardView"
+            style="@style/Material_Card_View"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+            card_view:cardElevation="@dimen/card_elevation">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:src="@drawable/gallery_square"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+<!--                    <include layout="@layout/headline_16dp" />-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/titleTV"
+                            style="@style/Material_Card_Title_Small"
+                            tools:text="Title" />
+
+                        <TextView
+                            android:id="@+id/subtitleTV"
+                            style="@style/Material_Card_Subtitle_8dp"
+                            tools:text="Subtitle" />
+                    </LinearLayout>
+<!--                    <include layout="@layout/supporting_text_24dp" />-->
+                    <TextView
+                        style="@style/Material_Card_Supporting_Text_12dp"
+                        tools:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+                        android:id="@+id/descriptionTV"/>
+
+                    <include layout="@layout/divider" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingLeft="8dp">
+
+                        <TextView
+                            android:id="@+id/leftBtn"
+                            style="@style/Material_Action_Small"
+                            tools:text="Action 1" />
+
+                        <TextView
+                            android:id="@+id/rightBtn"
+                            style="@style/Material_Action_Small"
+                            tools:text="Action 2" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,3 @@
+include ':PolluxLib'
+include ':app'
+rootProject.name = "Pollux"
