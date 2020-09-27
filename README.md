@@ -18,7 +18,7 @@ Then specify the dependency in your module-level build.gradle:
 
 ```groovy
 	    dependencies {
-	        implementation 'com.github.Oclemy:Pollux:Tag'
+	        implementation 'com.github.Oclemy:Pollux:1.0.0'
 	    }
 ```
 
@@ -40,8 +40,8 @@ apply plugin: 'kotlin-kapt'
 
 Here is how to use it:
 
-```kotlin
-       val adapter =  PolluxAdapter.with<User, CardImageOverlayBottomTextBinding>(R.layout.item) { adapterPosition, model, binding ->
+```java
+       val adapter =  PolluxAdapter.with<User, ItemBinding>(R.layout.item) { adapterPosition, model, binding ->
                 
                 //Then bind data here e.g
 		loadImg(model.imageURL,binding.image)
