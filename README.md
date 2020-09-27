@@ -55,3 +55,42 @@ Here is how to use it:
 ```
 
 And that's it, seriously. No extending of any class, no creating of any viewholder or manual inflations. Pollux takes advantage of data binding.
+
+So in summary you do the following:
+1. Install the library
+2. Enable data binding
+3. Instantiate the adapter
+4. Add data to the adapter.
+5. Set the adapter to the recyclerview.
+
+## Pagination
+
+With Pollux, load more pagination is as easy as it can get. Not only do you get pagination but also a progress bar is shown at the bottom. The progressbar gets removed when you call `markLoadMoreAsComplete()`. You need to call that method when you've finished downloading data from the server.
+
+All you need to get load more pagination is invoke the setLoadMorePaganination() method:
+
+```kotlin
+	adapter?.setupLoadMorePagination(rv) {
+            //Download next page from server
+            true
+        }
+```
+The pagination works by informing you if you've reached the end of the list. The method you pass then gets invoked.
+
+But how do I know the current page? Well it's simple. Just define a variable and assign it a value like say 1. Meaning the initial page is 1. Then every time end of the list is reached, increment it by 1.
+
+For example something like this:
+```kotlin
+        adapter?.setupLoadMorePagination(rv) {
+            simulateDownload(createItems()).observe(this@ExampleActivity, Observer {
+                adapter?.addAll(it)
+                adapter?.notifyDataSetChanged()
+                adapter?.markLoadMoreAsComplete()
+            })
+            pageToFetch++
+            true
+        }
+```
+
+Check the sample project.
+
