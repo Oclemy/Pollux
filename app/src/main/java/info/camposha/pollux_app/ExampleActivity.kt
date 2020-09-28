@@ -95,6 +95,7 @@ open class ExampleActivity : AppCompatActivity() {
 
         adapter =
             PolluxAdapter.with<Item, CardImageOverlayBottomTextBinding>(R.layout.card_image_overlay_bottom_text) { adapterPosition, model, binding ->
+
                 loadImg(model.imageURL,binding.image)
                 binding.titleTV.text = model.text1
                 binding.image.setOnClickListener {
@@ -121,7 +122,6 @@ open class ExampleActivity : AppCompatActivity() {
                 adapter?.markLoadMoreAsComplete()
             })
             pageToFetch++
-
             true
         }
     }
