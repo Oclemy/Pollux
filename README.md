@@ -95,3 +95,8 @@ For example something like this:
 
 Check the sample project.
 
+## Demo
+
+Here is the demo of the project:
+
+![Pollux Demo](pollux_demo.gif)
